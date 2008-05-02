@@ -8,7 +8,7 @@ require Exporter;
 @ISA = qw(Exporter);
 @EXPORT_OK = qw(note);
 @EXPORT = ();
-$VERSION = '0.01';
+$VERSION = '0.02';
 local @trap = ();
 
 sub note {

@@ -22,7 +22,7 @@ print "ok 1\n";
 local *note = note { output => 'print' };
 note "ok 2\n";
 
-# test warn
+no warnings 'redefine'; # test warn
 local *note = note { output => 'warn' };
 {
     my $message = '';
@@ -33,7 +33,7 @@ local *note = note { output => 'warn' };
 }
 
 # test filename
-my $file = 'debug.txt';
+my $file = 'debug.txt'; unlink $file; # may fail
 local *note = note { output => $file };
 my @data = <DATA>;
 note @data;
